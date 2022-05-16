@@ -1,20 +1,27 @@
 import React from "react";
+import SongForm from "./SongForm";
 
 
 class SongOverview extends React.Component {
-    constructor() {
-      super()
+    constructor(props) {
+      super(props)
       this.state = 
       {
         songs: []
       }
-  
+    this.addSong = this.addSong.bind(this)
+
+
     }
-  
     addSong = (song) => {
-                          // do something to change the state
-    }
-  
+        song.id = this.state.songs.length + 1
+        this.setState({
+          songs: [
+            ...this.state.songs, { song },
+          ],
+        });
+      };
+      
     render() {
       return (
         <div>
@@ -27,7 +34,6 @@ class SongOverview extends React.Component {
                                   <th className="song-row__item">Rating</th>
                                 </tr>
                                   </table>
-                <SongList songs={this.state.songs}/>
         </div>
       );
     }
