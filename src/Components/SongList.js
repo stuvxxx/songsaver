@@ -1,18 +1,19 @@
 import React from "react";
 import SongListItem from "./SongListItem";
 
+const 
+
+
 function SongList({songs}) {
     return(
-        <div>
-            <ul className="song-list">
+            <tbody className="song-list">
                 {songs.map((song) => (
                     <SongListItem 
                         song={song}
                         key={song.id}
                     />
                 ))}
-            </ul>
-        </div>
+            </tbody>
     )
 }
 
