@@ -5,7 +5,7 @@ function SongForm(props) {
     const [title, setTitle] = useState("")
     const [artist, setArtist] = useState("")
     const [genre, setGenre] = useState("rock")
-    const [stars, setStars] = useState("1")
+    const [stars, setStars] = useState("1 Star")
 
     
     const handleSubmit = (e) => {
@@ -53,11 +53,11 @@ function SongForm(props) {
             value={stars}
             onChange={(e) => setStars(e.target.value)}
             >
-                <option value="1star">1</option>
-                <option value="2star">2</option>
-                <option value="3star">3</option>
-                <option value="4star">4</option>
-                <option value="5star">5</option>
+                <option value="1">1 Star</option>
+                <option value="2">2 Star</option>
+                <option value="3">3 Star</option>
+                <option value="4">4 Star</option>
+                <option value="5">5 Star</option>
             </select>
             <button>Add Song</button>
         </form>
