@@ -15,6 +15,7 @@ class SongOverview extends React.Component {
     this.addSong = this.addSong.bind(this)
     this.handleDel = this.handleDel.bind(this)
 
+    g
 
     }
     addSong = (song) => {
