@@ -18,7 +18,6 @@ class SongOverview extends React.Component {
 
     }
     addSong = (song) => {
-      console.log("running addsong")
       const uniqueIdHelper = Math.floor(Math.random() * 100000000000);
         song.id = uniqueIdHelper + song.title
         this.setState({
@@ -30,7 +29,6 @@ class SongOverview extends React.Component {
       };
 
       sortByAscendingTitle() {
-        console.log("running sortByAscendingTitle")
         let sortedAsceding = this.state.songs.sort((a, b) => {
           const nameA = a.title.toUpperCase()
           const nameB = b.title.toUpperCase()
@@ -47,7 +45,6 @@ class SongOverview extends React.Component {
         });
       }
       sortByDecedingTitle() {
-        console.log("running sortByDecedingTitle")
         let sortedDeceding = this.state.songs.sort((a, b,) => {
           const nameA = a.title.toUpperCase()
           const nameB = b.title.toUpperCase()
@@ -64,7 +61,6 @@ class SongOverview extends React.Component {
         });
       }
       sortByAscendingArtist() {
-        console.log("running sortByAscendingArtist")
         let sortedAsceding = this.state.songs.sort((a, b) => {
           const nameA = a.artist.toUpperCase()
           const nameB = b.artist.toUpperCase()
@@ -81,7 +77,6 @@ class SongOverview extends React.Component {
         });
       }
       sortByDecedingArtist() {
-        console.log("running sortByDecedingArtist")
         let sortedDeceding = this.state.songs.sort((a, b,) => {
           const nameA = a.artist.toUpperCase()
           const nameB = b.artist.toUpperCase()
@@ -99,7 +94,6 @@ class SongOverview extends React.Component {
       }
 
       handleDel(idToDelete) {
-        console.log("Running HandleDel")
         const newSongList = this.state.songs.filter(song => song.id !== idToDelete)
         this.setState({
           songs: newSongList}
@@ -128,7 +122,6 @@ class SongOverview extends React.Component {
           })
         }
         else {
-        console.log("runnning handleFilter2")
         const arr1 = this.state.songs
         const arr2 = this.state.filteredSongs
         const arr3 = [...arr1, ...arr2]
@@ -143,45 +136,44 @@ class SongOverview extends React.Component {
 
     render() {
       return (
-        <div><button onClick={() => console.log(this.state)}>checkstate</button>
-                <SongForm addSong={this.addSong}/>
-                  <table style={{width: "100%"}}>   
-                    <tbody>    
-                      <tr className="song-header">  
-                        <th className="song-row__item">Song</th>
-                        <th className="song-row__item">Artist</th>
-                        <th className="song-row__item">Genre</th>
-                        <th className="song-row__item">Rating</th>
-                      </tr>
-                      <tr>
-                        <th>
-                            <button onClick={() => this.sortByAscendingTitle()}>asc</button>
-                            <button onClick={() => this.sortByDecedingTitle()}>dec</button>
-                        </th>
-                        <th>
-                            <button onClick={() => this.sortByAscendingArtist()}>asc</button>
-                            <button onClick={() => this.sortByDecedingArtist()}>dec</button>
-                        </th>
-                        <th>
-                          <label> Filter on Genre
-                          <select onChange={(e) => this.handleFilter(e.target.value)}>
-                            <option value="all">Show All</option>
-                            <option value="rock">Rock</option>
-                            <option value="hiphop">Hip-Hop</option>
-                            <option value="pop">Pop</option>
-                            <option value="classic">Classic</option>
-                            <option value="techno">Techno</option>
-                            <option value="rnb">R&B</option>
-                            <option value="dutch">Dutch</option>
-                            <option value="experimental">Experimental</option>
-                            </select>  
-                            </label>
-                        </th>
-                      </tr>
-                    </tbody>
-                    <SongList handleDel={this.handleDel} songs={this.state.songs}/>
-                  </table>
-
+        <div>
+          <SongForm addSong={this.addSong}/>
+            <table style={{width: "100%"}}>   
+              <tbody>    
+                <tr className="song-header">  
+                  <th className="song-row__item">Song</th>
+                  <th className="song-row__item">Artist</th>
+                  <th className="song-row__item">Genre</th>
+                  <th className="song-row__item">Rating</th>
+                </tr>
+                <tr>
+                  <th>
+                      <button onClick={() => this.sortByAscendingTitle()}>asc</button>
+                      <button onClick={() => this.sortByDecedingTitle()}>dec</button>
+                  </th>
+                  <th>
+                      <button onClick={() => this.sortByAscendingArtist()}>asc</button>
+                      <button onClick={() => this.sortByDecedingArtist()}>dec</button>
+                  </th>
+                  <th>
+                    <label> Filter on Genre
+                    <select onChange={(e) => this.handleFilter(e.target.value)}>
+                      <option value="all">Show All</option>
+                      <option value="rock">Rock</option>
+                      <option value="hiphop">Hip-Hop</option>
+                      <option value="pop">Pop</option>
+                      <option value="classic">Classic</option>
+                      <option value="techno">Techno</option>
+                      <option value="rnb">R&B</option>
+                      <option value="dutch">Dutch</option>
+                      <option value="experimental">Experimental</option>
+                      </select>  
+                      </label>
+                  </th>
+                </tr>
+              </tbody>
+                <SongList handleDel={this.handleDel} songs={this.state.songs}/>
+              </table>
         </div>
       );
     }
