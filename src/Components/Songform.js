@@ -4,7 +4,7 @@ import { useState } from "react"
 function SongForm(props) {
     const [title, setTitle] = useState("")
     const [artist, setArtist] = useState("")
-    const [genre, setGenre] = useState("Rock")
+    const [genre, setGenre] = useState("rock")
     const [stars, setStars] = useState("1")
 
     
@@ -40,7 +40,7 @@ function SongForm(props) {
             onChange={(e) => setGenre(e.target.value)}
             >
                 <option value="rock">Rock</option>
-                <option value="hip-hop">Hip-Hop</option>
+                <option value="hiphop">Hip-Hop</option>
                 <option value="pop">Pop</option>
                 <option value="classic">Classic</option>
                 <option value="techno">Techno</option>

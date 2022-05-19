@@ -1,17 +1,17 @@
 import React from "react";
 
-function SongListItem({song}) {
+function SongListItem(props) {
     return (
-    <li 
-        key={song.id}
+    <tr 
+        key={props.song.id}
         className="song-list-item"
-        value={song.title}
+        value={props.song.title}
         >
-            <div>{song.title}</div>
-            <div>{song.artist}</div>
-            <div>{song.genre}</div>
-            <div>{song.stars}</div>
-        </li>
+            <th>{props.song.title}</th>
+            <th>{props.song.artist}</th>
+            <th>{props.song.genre}</th>
+            <th>{props.song.stars}<button onClick={() => props.handleDel(props.song.id)}>del</button></th>
+        </tr>
         )
 }
 

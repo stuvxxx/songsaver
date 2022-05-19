@@ -1,19 +1,17 @@
 import React from "react";
 import SongListItem from "./SongListItem";
 
-const 
-
-
-function SongList({songs}) {
+function SongList(props) {
     return(
             <tbody className="song-list">
-                {songs.map((song) => (
+                {props.songs.map((song) => (
                     <SongListItem 
                         song={song}
                         key={song.id}
+                        handleDel={props.handleDel}
                     />
                 ))}
-            </tbody>
+                </tbody>
     )
 }
 
