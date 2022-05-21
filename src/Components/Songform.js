@@ -16,9 +16,9 @@ function SongForm(props) {
 
 
     return (
-    <div className="song-form">
+    <div className="song-form-container">
         <form onSubmit={handleSubmit}>
-            <label>Title</label>
+            <div>
             <input 
                 type="text"
                 required
@@ -26,7 +26,8 @@ function SongForm(props) {
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="Title"
                 />
-            <label>Artist</label>
+            </div>
+            <div>
             <input 
                 type="text"
                 required 
@@ -34,7 +35,8 @@ function SongForm(props) {
                 onChange={(e) => setArtist(e.target.value)}
                 placeholder="Artist"
                 />
-            <label>Genre</label>
+            </div>
+            <div>
             <select 
             value={genre}
             onChange={(e) => setGenre(e.target.value)}
@@ -48,7 +50,8 @@ function SongForm(props) {
                 <option value="dutch">Dutch</option>
                 <option value="experimental">Experimental</option>
             </select>
-            <label>Stars</label>
+            </div>
+            <div>
             <select
             value={stars}
             onChange={(e) => setStars(e.target.value)}
@@ -59,9 +62,10 @@ function SongForm(props) {
                 <option value="4">4 Star</option>
                 <option value="5">5 Star</option>
             </select>
-            <button>Add Song</button>
+            </div>
+            <button className="add-btn">Add Song</button>
         </form>
-    </div>
+        </div>
     )
 }
 

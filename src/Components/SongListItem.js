@@ -7,11 +7,11 @@ function SongListItem(props) {
         className="song-list-item"
         value={props.song.title}
         >
-            <th>{props.song.title}</th>
-            <th>{props.song.artist}</th>
-            <th>{props.song.genre}</th>
-            <th>{props.song.stars}<button onClick={() => props.handleDel(props.song.id)}>del</button></th>
-        </tr>
+        <th>{props.song.title}</th>
+        <th>{props.song.artist}</th>
+        <th>{props.song.genre}</th>
+        <th>{props.song.stars}<button onClick={() => props.handleDel(props.song.id)}>del</button></th>
+    </tr>
         )
 }
 

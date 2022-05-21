@@ -1,0 +1,20 @@
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 2vh;
+    background-color: rgb(28, 48, 41);
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .nav-links {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+  }
