@@ -11,7 +11,7 @@ function SongList(props) {
                         handleDel={props.handleDel}
                     />
                 ))}
-                </tbody>
+            </tbody>
     )
 }
 

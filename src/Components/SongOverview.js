@@ -3,6 +3,7 @@ import SongForm from "./SongForm";
 import SongList from "./SongList";
 
 
+
 class SongOverview extends React.Component {
     constructor(props) {
       super(props)
@@ -60,6 +61,7 @@ class SongOverview extends React.Component {
           songs: sortedDeceding
         });
       }
+
       sortByAscendingArtist() {
         let sortedAsceding = this.state.songs.sort((a, b) => {
           const nameA = a.artist.toUpperCase()
@@ -76,6 +78,7 @@ class SongOverview extends React.Component {
           songs: sortedAsceding
         });
       }
+      
       sortByDecedingArtist() {
         let sortedDeceding = this.state.songs.sort((a, b,) => {
           const nameA = a.artist.toUpperCase()
@@ -138,26 +141,19 @@ class SongOverview extends React.Component {
       return (
         <div>
           <SongForm addSong={this.addSong}/>
-            <table style={{width: "100%"}}>   
+            <table className="song-table" style={{width: "100%"}}>   
               <tbody>    
                 <tr className="song-header">  
-                  <th className="song-row__item">Song</th>
-                  <th className="song-row__item">Artist</th>
-                  <th className="song-row__item">Genre</th>
-                  <th className="song-row__item">Rating</th>
-                </tr>
-                <tr>
-                  <th>
-                      <button onClick={() => this.sortByAscendingTitle()}>asc</button>
-                      <button onClick={() => this.sortByDecedingTitle()}>dec</button>
+                  <th className="song-row__item">Songs
+                    <button className="sort-btn" onClick={() => this.sortByAscendingTitle()}>a/z</button>
+                    <button className="sort-btn" onClick={() => this.sortByDecedingTitle()}>z/a</button>
                   </th>
-                  <th>
-                      <button onClick={() => this.sortByAscendingArtist()}>asc</button>
-                      <button onClick={() => this.sortByDecedingArtist()}>dec</button>
+                  <th className="song-row__item">Artists
+                    <button className="sort-btn" onClick={() => this.sortByAscendingArtist()}>a/z</button>
+                    <button className="sort-btn" onClick={() => this.sortByDecedingArtist()}>z/a</button>
                   </th>
-                  <th>
-                    <label> Filter on Genre
-                    <select onChange={(e) => this.handleFilter(e.target.value)}>
+                  <th className="song-row__item">Genres
+                    <select className="genre-menu" onChange={(e) => this.handleFilter(e.target.value)}>
                       <option value="all">Show All</option>
                       <option value="rock">Rock</option>
                       <option value="hiphop">Hip-Hop</option>
@@ -167,9 +163,9 @@ class SongOverview extends React.Component {
                       <option value="rnb">R&B</option>
                       <option value="dutch">Dutch</option>
                       <option value="experimental">Experimental</option>
-                      </select>  
-                      </label>
+                    </select>
                   </th>
+                  <th className="song-row__item">Rating</th>
                 </tr>
               </tbody>
                 <SongList handleDel={this.handleDel} songs={this.state.songs}/>
