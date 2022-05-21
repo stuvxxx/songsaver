@@ -1,0 +1,31 @@
+.song-table {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    border: 1px solid #FFFFFF;
+    width: 80%;
+    color: white;
+  }
+
+.song-header {
+  font-size: 30px;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.sort-btn {
+  background-color: transparent;
+  color: white;
+  border: 1px yellow solid;
+  cursor: pointer;
+  margin: 5px;
+} 
+
+.genre-menu {
+  color: black;
+  background-color: white;
+  margin-bottom: 10px;
+}
+
+.menu-option {
+  color: white;
+  background-color: transparent;
+}

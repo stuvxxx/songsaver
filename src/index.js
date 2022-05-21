@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './Styles/stylereset.css'
 import './Styles/mainstyles.css'
 import './Styles/nav.css'
+import './Styles/about.css'
+import './Styles/song-form.css'
+import './Styles/song-table.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
